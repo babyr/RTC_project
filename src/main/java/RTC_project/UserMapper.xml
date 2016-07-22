@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <mapper namespace="RTC_project.UserMapper">
-<select name="selectById" resultType="RTC_project.User">
+<select name="selectByLoginId" resultType="RTC_project.User">
 	select *
 	from [RTC]
 	where loginId=#{loginId}
