@@ -7,7 +7,13 @@ public class User {
 	String birth;
 	String phoneNumber;
 	String email;
-	
+	String name;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public int getId() {
 		return id;
 	}

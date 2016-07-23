@@ -15,7 +15,7 @@
 	<input type="text" name="loginId" />
 	
 	<label>PASSWORD</label>
-	<input type="text" name="passwd" />
+	<input type="password" name="passwd" />
 	<button type="submit" class="btn btn-primary">
 		로그인
 	</button>
@@ -24,11 +24,11 @@
 	<div>실패</div>
 </c:if>
 </sec:authorize>
-<sec:authorize access="authenticatited">
+<sec:authorize access="authenticated">
 	<label>Id</label>
 	<div><sec:authentication property="user.loginId"></sec:authentication></div>
 	
-	<laber>이름</laber>
+	<label>이름</label>
 	<div><sec:authentication property="user.name"></sec:authentication></div>
 </sec:authorize>
 

@@ -14,10 +14,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MyAuthenticationProvider implements AuthenticationProvider {
+	
 	@Autowired
 	UserMapper userMapper;
 
-	@Override
+	
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 		String loginId = authentication.getName();
 		String passwd = authentication.getCredentials().toString();
@@ -31,6 +32,7 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
 		if (user.getPasswd().equals((passwd)) == false)
 			return null;
 		List<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();
+	
 		grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_전체"));
 		grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_전체"));
 		return new MyAuthenticaion(loginId, passwd, grantedAuthorities, user);

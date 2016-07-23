@@ -7,7 +7,7 @@
 		<form-login 
 			login-page="/login/login.do"
 			login-processing-url="/login/login_processing.do"
-			default-target-url="login/login.do"
+			default-target-url="/login/login.do"
 			username-parameter="loginId" 
 			password-parameter="passwd" />
 		<logout 

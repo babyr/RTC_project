@@ -10,7 +10,7 @@ public class LoginController {
 
 	@RequestMapping("/login/login.do")
 	public String index(Model model){
-		return "/login/login";
+		return "login/login";
 	}
 	
 	@RequestMapping(value="/login/login.do",method=RequestMethod.GET)
