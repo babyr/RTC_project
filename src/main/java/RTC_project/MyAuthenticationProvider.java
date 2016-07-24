@@ -27,13 +27,16 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
 
 	public Authentication authenticate(String loginId, String passwd) throws AuthenticationException {
 		User user = userMapper.selectByLoginId(loginId);
-		if (user == null)
+		
+		
+		if (user == null){
 			return null;
-		if (user.getPasswd().equals((passwd)) == false)
+		}
+		if (user.getPasswd().equals((passwd)) == false){
 			return null;
+		}
 		List<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();
 	
-		grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_전체"));
 		grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_전체"));
 		return new MyAuthenticaion(loginId, passwd, grantedAuthorities, user);
 	}
@@ -46,10 +49,14 @@ public class MyAuthenticationProvider implements AuthenticationProvider {
 	public class MyAuthenticaion extends UsernamePasswordAuthenticationToken {
 		private static final long serialVersionUID = 1L;
 		User user;
-
+		
+	
+		
 		public MyAuthenticaion(String loginId, String passwd, List<GrantedAuthority> grantedAuthorities, User user) {
 			super(loginId, passwd, grantedAuthorities);
 			this.user = user;
+			
+			
 		}
 
 		public User getUser() {
