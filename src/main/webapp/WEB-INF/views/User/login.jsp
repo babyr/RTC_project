@@ -53,7 +53,7 @@
 	</button>
 	</form>
 </sec:authorize>
-
+<a href="/RTC_project/Board/list.do">게시판</a>
 
 </body>
 </html>

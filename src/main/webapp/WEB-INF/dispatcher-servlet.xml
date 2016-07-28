@@ -32,4 +32,5 @@
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory1" />
 	</bean>
 
+	<bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"></bean>
 </beans>

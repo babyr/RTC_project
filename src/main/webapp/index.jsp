@@ -10,6 +10,6 @@
 <body>
 <a href="User/login.do">로그인</a>
 <a href="User/member.do">회원가입</a>
-<a href="User/edit.do?id=3">정보수정</a>
+<a href="Board/list.do">게시판 리스트</a>
 </body>
 </html>
