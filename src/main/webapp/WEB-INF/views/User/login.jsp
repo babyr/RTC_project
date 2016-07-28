@@ -51,9 +51,11 @@
 	<button type="submit" class="btn btn-primary">
 		로그아웃
 	</button>
+	<a href="/friend/FriendSearch.do">검색</a>
 	</form>
 </sec:authorize>
 <a href="/RTC_project/Board/list.do">게시판</a>
+
 
 </body>
 </html>

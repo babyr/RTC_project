@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<<<<<<< HEAD:target/classes/RTC_project/mapper/UserMapper.xml
 <mapper namespace="RTC_project.mapper.UserMapper">
 	<select id="selectByLoginId" resultType="RTC_project.dto.User">
+=======
+<mapper namespace="RTC_project.UserMapper">
+
+	<select id="selectByLoginId" resultType="RTC_project.User">
+>>>>>>> 583ef4da109ee5639af3d3b0c6c29590a0df2d26:target/classes/RTC_project/UserMapper.xml
 		select *
 		from [user]
 		where loginId=#{loginId}
@@ -27,4 +33,32 @@
 		FROM [User]
 		WHERE id = #{id}
 	</select>	
+
+<select id="selectByLoginId" resultType="RTC_project.User">
+	select *
+	from [user]
+	where loginId=#{loginId}
+</select>
+<select id="recieve_id" resultType="RTC_project.User">
+		select *
+		from [Friend]
+		where [user_id]=#{user_id}
+		order by receive_date desc
+</select>
+<select id="send_id" resultType="RTC_project.User">
+	select *
+	from [Friend]
+	where [user_id]=#{user_id}
+	order by send_date desc
+</select>
+<select id="aprrove">
+	update from [Friend]
+	set [state]=1
+	where [user_id]=#{user_id}
+</select>
+<select id="selectByName" resultType="RTC_project">
+	select *
+	from [user]
+	where charindex(#{name},name)=1
+</select>
 </mapper>
