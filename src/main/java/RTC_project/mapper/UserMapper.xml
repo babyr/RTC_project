@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<<<<<<< HEAD:src/main/java/RTC_project/mapper/UserMapper.xml
+<mapper namespace="RTC_project.mapper.UserMapper">
+	<select id="selectByLoginId" resultType="RTC_project.dto.User">
+=======
+<mapper namespace="RTC_project.UserMapper">
+
+	<select id="selectByLoginId" resultType="RTC_project.User">
+>>>>>>> 583ef4da109ee5639af3d3b0c6c29590a0df2d26:src/main/java/RTC_project/UserMapper.xml
+		select *
+		from [user]
+		where loginId=#{loginId}
+	</select>
+	
+	<update id="update">
+		UPDATE [User] SET
+			passwd = #{passwd},
+			birth = #{birth},
+			phoneNumber = #{phoneNumber},
+			email = #{email}
+		WHERE id = #{id}
+	</update>
+	
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+		INSERT [User] (loginId, passwd, birth, phoneNumber, email, name)
+		VALUES (#{loginId}, #{passwd}, #{birth}, #{phoneNumber}, #{email}, #{name})
+	</insert>
+	
+	<select id ="selectById" resultType="RTC_project.dto.User">
+		SELECT *
+		FROM [User]
+		WHERE id = #{id}
+	</select>	
+
+
+
+<select id="selectByName" resultType="RTC_project.User">
+	select *
+	from [user]
+	where charindex(#{name},name)=1
+</select>
+
+</mapper>
