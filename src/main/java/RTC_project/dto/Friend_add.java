@@ -1,15 +1,36 @@
-package RTC_project;
+package RTC_project.dto;
 
-public class Friend {
-	String user_id;
+public class Friend_add {
+	int user_id;
 	String friend_id;
 	int state;
 	String send_date;
 	String recieve_date;
-	public String getUser_id() {
+	String name;
+	String loginId;
+	public String getLoginId() {
+		return loginId;
+	}
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
+	}
+	int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getUser_id() {
 		return user_id;
 	}
-	public void setUser_id(String user_id) {
+	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
 	public String getFriend_id() {
