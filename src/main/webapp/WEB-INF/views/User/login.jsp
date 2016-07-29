@@ -53,7 +53,7 @@
 	</c:if>
 
 	<sec:authorize access="authenticated">
-<<<<<<< HEAD
+
 
 		<label>Id</label>
 		<div>
@@ -98,20 +98,20 @@
 						alert("친구 신청중 이거나 이미 존재하는 친구 입니다.")
 					</script>
 				</c:if>
-=======
+
 		<li><a href="/RTC_project/User/edit.do">
 			<sec:authentication property="user.name"/>
 		정보수정</a></li>
-	</sec:authorize>>
+	
 	<form method="POST" action="logout.do">
 	<button type="submit" class="btn btn-primary">
 		로그아웃
 	</button>
 	<a href="/friend/FriendSearch.do">검색</a>
 	</form>
-</sec:authorize>
+
 <a href="/RTC_project/Board/list.do">게시판</a>
->>>>>>> 864606f0a668d24102205490868a094ee90224e2
+
 
 
 </body>

@@ -1,4 +1,4 @@
-package RTC_project;
+package RTC_project.dto;
 
 public class Friend_add {
 	int user_id;

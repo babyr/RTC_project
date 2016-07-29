@@ -1,4 +1,4 @@
-package RTC_project;
+package RTC_project.controller;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -14,6 +14,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import RTC_project.dto.Friend;
+import RTC_project.mapper.FriendMapper;
+import RTC_project.mapper.UserMapper;
+import RTC_project.service.UserService;
 
 
 

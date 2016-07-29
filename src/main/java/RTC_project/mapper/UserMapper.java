@@ -1,5 +1,7 @@
 package RTC_project.mapper;
 
+import RTC_project.dto.Friend;
+import RTC_project.dto.Friend_add;
 import RTC_project.dto.User;
 
 import java.util.List;

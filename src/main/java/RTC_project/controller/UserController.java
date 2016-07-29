@@ -39,7 +39,9 @@ public class UserController {
 	
 	@RequestMapping(value="/User/member.do",method=RequestMethod.POST)
 	public String member(Model model, User user){
-		String message = userService.validateBeforeInsert(user);
+		String message
+		
+		= userService.validateBeforeInsert(user);
 		if(message == null){
 			map.insert(user);
 			model.addAttribute("success","회원가입 성공.");

@@ -1,8 +1,11 @@
-package RTC_project;
+package RTC_project.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
+
+import RTC_project.dto.Friend;
+import RTC_project.dto.Friend_add;
 
 public interface FriendMapper {
 	void approve(@Param("id")String id,@Param("user")String f_id );
