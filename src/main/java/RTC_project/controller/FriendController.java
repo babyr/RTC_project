@@ -36,8 +36,6 @@ public class FriendController {
 	
 	@RequestMapping(value="/User/searchFriend.do",method=RequestMethod.POST)
 	public String serachUser(@RequestParam("name") String name,Model model){
-		System.out.println(name);
-		boolean check;
 		model.addAttribute("list",userMapper.selectByName(name));
 		return "User/login";
 		

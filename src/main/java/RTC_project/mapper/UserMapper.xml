@@ -4,9 +4,9 @@
 
 
 
-<mapper namespace="RTC_project.UserMapper">
+<mapper namespace="RTC_project.mapper.UserMapper">
 
-	<select id="selectByLoginId" resultType="RTC_project.User">
+	<select id="selectByLoginId" resultType="RTC_project.dto.User">
 		select *
 		from [user]
 		where loginId=#{loginId}
@@ -34,7 +34,7 @@
 
 
 
-<select id="selectByName" resultType="RTC_project.User">
+<select id="selectByName" resultType="RTC_project.dto.User">
 	select *
 	from [user]
 	where charindex(#{name},name)=1

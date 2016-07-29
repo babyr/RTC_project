@@ -41,7 +41,8 @@
 <body>
 	<sec:authorize access="not authenticated">
 		<form method="post" action="login_processing.do">
-			<label>ID</label> <input type="text" name="loginId" /> <label>PASSWORD</label>
+			<label>ID</label> 
+			<input type="text" name="loginId" /> <label>PASSWORD</label>
 			<input type="password" name="passwd" />
 			<button type="submit" class="btn btn-primary">로그인</button>
 		</form>
