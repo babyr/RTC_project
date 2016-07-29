@@ -29,31 +29,12 @@
 		WHERE id = #{id}
 	</select>	
 
-<select id="selectByLoginId" resultType="RTC_project.User">
-	select *
-	from [user]
-	where loginId=#{loginId}
-</select>
-<select id="recieve_id" resultType="RTC_project.User">
-		select *
-		from [Friend]
-		where [user_id]=#{user_id}
-		order by receive_date desc
-</select>
-<select id="send_id" resultType="RTC_project.User">
-	select *
-	from [Friend]
-	where [user_id]=#{user_id}
-	order by send_date desc
-</select>
-<select id="aprrove">
-	update from [Friend]
-	set [state]=1
-	where [user_id]=#{user_id}
-</select>
-<select id="selectByName" resultType="RTC_project">
+
+
+<select id="selectByName" resultType="RTC_project.User">
 	select *
 	from [user]
 	where charindex(#{name},name)=1
 </select>
+
 </mapper>

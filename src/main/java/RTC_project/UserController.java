@@ -19,6 +19,7 @@ public class UserController {
 	@Autowired
 		UserService userService;
 	
+	
 	@RequestMapping(value="/User/login.do",method=RequestMethod.GET)
 	public String login(Model model){
 			return "User/login";
