@@ -67,7 +67,7 @@
 						property="user.name" /> 정보수정
 			</a></li>
 		</sec:authorize>
-	<form method="POST" action="logout.do">
+		<form method="POST" action="logout.do">
 			<button type="submit" class="btn btn-primary">로그아웃</button>
 		</form>
 		<form class="form-inline" method="post" action="searchFriend.do">
@@ -93,27 +93,19 @@
 	<button type="button" onclick="list_()">친구신청</button>
 	<div id="searchResult_"></div>
 	
-	</sec:authorize>
 	<c:if test="${error eq false }">
 					<script>
 						alert("친구 신청중 이거나 이미 존재하는 친구 입니다.")
 					</script>
 				</c:if>
 
-		<li><a href="/RTC_project/User/edit.do">
-			<sec:authentication property="user.name"/>
-		정보수정</a></li>
-	
-	<form method="POST" action="logout.do">
-	<button type="submit" class="btn btn-primary">
-		로그아웃
-	</button>
-	<a href="/friend/FriendSearch.do">검색</a>
-	</form>
 
 <a href="/RTC_project/Board/list.do">게시판</a>
-
-
+		
+	</sec:authorize>
+	
+	
+	
 
 </body>
 </html>
