@@ -34,35 +34,37 @@ public class FriendController {
 		FriendMapper fmap;
 	
 	
-	@RequestMapping(value="/User/searchFriend.do",method=RequestMethod.POST)
-	public String serachUser(@RequestParam("name") String name,Model model){
-		model.addAttribute("list",userMapper.selectByName(name));
-		return "User/login";
+	@RequestMapping(value="/searchFriend.do",method=RequestMethod.POST)
+	public String serachUser(@RequestParam("loginId") String name,Model model){
+		model.addAttribute("list",userMapper.selectById_friend(name,UserService.getCurrentUser().getLoginId()));
+		return "friend/Friend_search";
 		
 	}
 	
-	@RequestMapping("/User/searchFriend.do")
+	@RequestMapping("/searchFriend.do")
 	public String FriendList(Model model){
-				
 		model.addAttribute("flist",fmap.friendList_2(UserService.getCurrentUser().getLoginId()));
 		model.addAttribute("present",UserService.getCurrentUser().getLoginId());
 		return "friend/FriendList";
 		
 	}
-	@RequestMapping("/User/searchFriend_adding.do")
+	@RequestMapping("/searchFriend_adding.do")
 	public String FriendList_(Model model){
+		
 		model.addAttribute("present",UserService.getCurrentUser().getId());
 		model.addAttribute("flist",fmap.friendList_1(UserService.getCurrentUser().getLoginId()));
 		return "friend/Friendadd";
 		
 	}
-	@RequestMapping("/User/approve.do")
+	@RequestMapping("/approve.do")
 	public String FriendList_approve(Model model,@RequestParam("id") String login){
+		System.out.println(login);
+		System.out.println(UserService.getCurrentUser().getLoginId());
 		fmap.approve(UserService.getCurrentUser().getLoginId(), login);
-		return "User/login";
+		return "User/index";
 		
 	}
-	@RequestMapping("/User/Friend_add.do")
+	@RequestMapping("/Friend_add.do")
 	public String Friendadd(Model model,@RequestParam("id") String login){
 		SimpleDateFormat date = new SimpleDateFormat("yyyy/mm/dd/hh:mm:ss");
 		
@@ -72,14 +74,19 @@ public class FriendController {
 			if(list.get(a).getFriend_id().equals(login)||list.get(a).getUser_id().equals(login)){
 				boolean error=false;
 				model.addAttribute("error",error);
-				return "User/login"; 
+				return "friend/friend_form"; 
 			}
 		}
 		fmap.friend_add(UserService.getCurrentUser().getId(), login, false, 
 				date.format(new Date()), date.format(new Date()));
-		System.out.println("asdasdasdasd");
-		return "User/login";
+		boolean error=true;
+		model.addAttribute("error",error);
+		return "friend/friend_form";
 		
+	}
+	@RequestMapping("/friend_form")
+	public String se(Model model){
+		return "friend/friend_form";
 	}
 	
 }

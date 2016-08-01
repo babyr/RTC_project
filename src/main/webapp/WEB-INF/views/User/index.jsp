@@ -19,7 +19,7 @@
 
 </head>
 <script>
-var ch=0;
+var ch=1;
 
 $(function(){
     $(".slide").click(function(){
@@ -48,27 +48,15 @@ $("#search_friend_").load("searchFriend.do",param);
 function logout(){
 	location.href="logout.do";
 }
- $(function(){
-	$("#msg").click(function(){
+	function list_(){
 		$("#tab1").load("searchFriend_adding.do");
-		if(ch++ % 2 == 0){
-			$("#tab1").show('fast',function(){
-				$("#friend").hide();
-				$("#searchResult").hide();
-				$("#execute").hide();
-			});
-			}
-		else{
-			$("#tab1").hide('fast');
-			$("#friend").show();
-			$("#searchResult").show();
-			$("#execute").show();
-			
+		$("#tab1").css("height","200px");
+		$("#tab1").show();
+		$("#friend").hide();
+		$("#execute").hide();
+		$("#searchResult").hide();
 		
-		}
-	});
- });
-
+	}
 
 
 	
@@ -99,7 +87,6 @@ function logout(){
 			<article class="post"> <header>
 			<div class="title">
 				<h2>Lorem ipsum dolor amet nullam consequat etiam feugiat</h2>
-				
 			</div>
 			</header> <a href="User/login.do">로그인</a> <a href="User/member.do">회원가입</a> <a
 				href="Board/list.do">게시판 리스트</a> </article>
@@ -139,15 +126,8 @@ function logout(){
 							<sec:authentication property="user.email" />
 						</div>
 						<div id="container">
-						<button type="button" id="edit"class="btn_5">정보수정</button>
-						<script>
-						$(function(){
-							$("#edit").click(function(){
-								window.open('/RTC_project/User/edit.do','',"width=280, height=500, left=800, top=100")
-							})
-						})
-						</script>
-						<button type="button" id="msg" class="btn_5">쪽지</button>
+						<button type="button" class="btn_5">정보수정</button>
+						<button type="button" onclick="list_()" class="btn_5">쪽지</button>
 						<button type="button" onclick="logout()"class="btn_5">로그아웃</button>
 						 <div class="tab_container">
 						  <div id="tab1" class="tab_content">

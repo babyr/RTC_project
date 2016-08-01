@@ -6,39 +6,38 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
-<style>
-	label{
-		margin-top:20px;
-	}
-</style>
+<link rel="stylesheet" href="../res/main.css" >
+<link rel="stylesheet" href="../res/my.css" >
+<script src="http://code.jquery.com/jquery-1.7.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
-<body>
-<div class="container">
-	<h1>정보 수정</h1>
+<body style="padding-top:20px !important">
+<div id="title_">정보 수정</div>
+<div class="container" style="padding-top:20px !important;">
 	
-	<form:form method="POST" modelAttribute="user">
-		<label>ID</label>
-		<form:input path="loginId" readonly="true"/>
+	
+	<form:form  modelAttribute="user" method="post">
+		<label id="label_">ID</label>
+		<form:input class="input" path="loginId" readonly="true"/>
 		
-		<label>passwd</label>
-		<form:input path="passwd" type="password"/>
+		<label id="label_">passwd</label>
+		<form:input class="input" path="passwd" type="password"/>
 
-		<label>이름</label>
-		<form:input path="name" />
+		<label id="label_">이름</label>
+		<form:input class="input" path="name" />
 		
-		<label>생년월일</label>
-		<form:input path="birth"/>
+		<label id="label_">생년월일</label>
+		<form:input class="input" path="birth"/>
 		
-		<label>전화번호</label>
-		<form:input path="phoneNumber"/>
+		<label id="label_">전화번호</label>
+		<form:input class="input" path="phoneNumber"/>
 		
-		<label>이메일</label>
-		<form:input path="email"  type="email"/>
+		<label id="label_">이메일</label>
+		<form:input class="input" path="email"  type="email"/>
 		
 		<div>
-			<button type="submit" class="btn btn-primary">저장</button>
-			<a href="User/edit.do">처음으로</a>
+			<button type="submit"  class="btn btn-primary" style="margin-left: 240px !important;">저장</button>
 		</div>
 	</form:form>
 	

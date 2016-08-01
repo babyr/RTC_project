@@ -64,8 +64,9 @@ public class UserController {
 			map.update(user);
 			UserService.setCurrentUser(user);
 			model.addAttribute("success","정보변경 성공.");
-		}else
-			model.addAttribute("error",message);
+		}else{
+			return message;
+		}
 		return "User/edit";
 	}
 	
