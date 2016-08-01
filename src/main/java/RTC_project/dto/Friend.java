@@ -3,6 +3,13 @@ package RTC_project.dto;
 public class Friend {
 	String user_id;
 	String friend_id;
+	String name;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getUser_id() {
 		return user_id;
 	}

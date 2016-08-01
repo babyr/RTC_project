@@ -61,51 +61,60 @@
          <sec:authentication property="user.loginId"></sec:authentication>
       </div>
 
-      <label>이름</label>
-      <sec:authorize access="authenticated">
-         <li><a href="/RTC_project/User/edit.do"> <sec:authentication
-                  property="user.name" /> 정보수정
-         </a></li>
-      </sec:authorize>
-      <form method="POST" action="logout.do">
-         <button type="submit" class="btn btn-primary">로그아웃</button>
-      </form>
-      <form class="form-inline" method="post" action="searchFriend.do">
-         <span>이름:</span> 
-         <input type="text" name="name" />
-         <button type="submit" class="btn">검색</button>
-      </form>
-      <c:if test="${list.size()==0}">
-      <span>죄회결과 없음</span>
-   </c:if>
-   <c:if test="${list.size()>0}">
-      <table class="table table-bordered">
-         <c:forEach var="user" items="${list}">
-            <tr class="p" data-id="${user.loginId}">
-               <td>${ user.loginId }<span>(${ user.name })</span>
-               <span class="add">+</span></td>
-            </tr>
-         </c:forEach>
-      </table>
-   </c:if>
-   <button type="button" onclick="list()">친구목록</button>
-   <div id="searchResult"></div>
-   <button type="button" onclick="list_()">친구신청</button>
-   <div id="searchResult_"></div>
-   
-   <c:if test="${error eq false }">
-               <script>
-                  alert("친구 신청중 이거나 이미 존재하는 친구 입니다.")
-               </script>
-            </c:if>
+
+		<label>이름</label>
+		<sec:authorize access="authenticated">
+			<li><a href="/RTC_project/User/edit.do"> <sec:authentication
+						property="user.name" /> 정보수정
+			</a></li>
+		</sec:authorize>
+		<form method="POST" action="logout.do">
+			<button type="submit" class="btn btn-primary">로그아웃</button>
+		</form>
+		<form class="form-inline" method="post" action="searchFriend.do">
+			<span>이름:</span> 
+			<input type="text" name="name" />
+			<button type="submit" class="btn">검색</button>
+		</form>
+		<c:if test="${list.size()==0}">
+		<span>죄회결과 없음</span>
+	</c:if>
+	<c:if test="${list.size()>0}">
+		<table class="table table-bordered">
+			<c:forEach var="user" items="${list}">
+				<tr class="p" data-id="${user.loginId}">
+					<td>${ user.loginId }<span>(${ user.name })</span>
+					<span class="add">+</span></td>
+				</tr>
+			</c:forEach>
+		</table>
+	</c:if>
+	<button type="button" onclick="list()">친구목록</button>
+	<div id="searchResult"></div>
+	<button type="button" onclick="list_()">친구신청</button>
+	<div id="searchResult_"></div>
+	
+	<c:if test="${error eq false }">
+					<script>
+						alert("친구 신청중 이거나 이미 존재하는 친구 입니다.")
+					</script>
+				</c:if>
 
 
 <a href="/RTC_project/Board/list.do">게시판</a>
+<div id="side">
+	<span>브라더</span>
+</div>
+		
+	</sec:authorize>
+	
+	
+	
+
+   
+
       
-   </sec:authorize>
-   
-   
-   
+
 
 </body>
 </html>

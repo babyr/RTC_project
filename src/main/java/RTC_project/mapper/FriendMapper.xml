@@ -19,7 +19,7 @@
 </select>
 <select id="friendList_2" resultType="RTC_project.dto.Friend">
 	select *
-	from [Friend]
+	from [Friend] f join [User] u on f.[user_id]=u.loginId
 	where user_Id=#{id} or friend_id=#{id}
 </select>
 <insert id="friend_add">

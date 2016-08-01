@@ -13,7 +13,7 @@ public interface UserMapper {
 	void insert(User user);
 	void update(User user);
 	User selectById(int id);
-	List<User> selectByName(String name);
+	List<User> selectById_friend(@Param("fid")String fid,@Param("id") String id);
 	List<Friend> friendList(int id);
 	List<Friend> friendList_2(int id);
 	List<Friend_add> friendList_1(String id);
