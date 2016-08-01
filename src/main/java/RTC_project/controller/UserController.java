@@ -1,14 +1,17 @@
 package RTC_project.controller;
 
+import java.net.URLEncoder;
 import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import RTC_project.dto.User;
 import RTC_project.mapper.UserMapper;
@@ -37,11 +40,19 @@ public class UserController {
 		return "User/member";
 	}
 	
+	@RequestMapping(value="/User/id_check.do",method=RequestMethod.GET)
+	public @ResponseBody String id_check(@RequestParam("id") String id) throws Exception{
+		URLEncoder.encode(id,"UTF-8");
+		String msg="";
+		if(map.selectByLoginId(id)==null){
+			msg="success";
+		}else
+			msg="fail";
+		return msg.toString();
+	}
 	@RequestMapping(value="/User/member.do",method=RequestMethod.POST)
 	public String member(Model model, User user){
-		String message
-		
-		= userService.validateBeforeInsert(user);
+		String message= userService.validateBeforeInsert(user);
 		if(message == null){
 			map.insert(user);
 			model.addAttribute("success","회원가입 성공.");

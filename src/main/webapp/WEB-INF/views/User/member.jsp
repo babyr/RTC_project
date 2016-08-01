@@ -8,10 +8,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-1.7.js"></script>
+<script src="/RTC_project/res/id_check.js" type="text/javascript"></script>
 <style>
 	label{
 		margin-top:20px;
 	}
+
 </style>
 
 </head>
@@ -21,7 +23,9 @@
 	
 	<form:form method="POST" modelAttribute="user">
 		<label>ID</label>
-		<form:input path="loginId"/>
+		<form:input path="loginId" id="id"/>
+		<span id="idChk"></span>
+		
 		
 		<label>passwd</label>
 		<form:input path="passwd" showPasswd="true"/>
@@ -40,7 +44,7 @@
 		
 		<div>
 			<button type="submit" class="btn btn-primary">회원가입</button>
-			<a href="index.do">처음으로</a>
+			<a href="/RTC_project/index.jsp">처음으로</a>
 		</div>
 	</form:form>
 	
@@ -56,6 +60,7 @@
 			alert(success);
 		</script>
 	</c:if>
+	
 </div>
 </body>
 </html>
