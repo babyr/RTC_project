@@ -6,45 +6,48 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/RTC_project/res/main.css" >
+<link rel="stylesheet" href="/RTC_project/res/my.css">
 <script src="http://code.jquery.com/jquery-1.7.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="/RTC_project/res/id_check.js" type="text/javascript"></script>
 <style>
 	label{
 		margin-top:20px;
 	}
-
+	#idChk{
+		margin-left:50px;
+	}
 </style>
 
 </head>
-<body>
-<div class="container">
-	<h1>회원가입</h1>
+<body style="padding-top:20px !important">
+<div id="title_">회원가입</div>
+<div class="container" style="padding-top:20px !important">
 	
 	<form:form method="POST" modelAttribute="user">
-		<label>ID</label>
-		<form:input path="loginId" id="id"/>
+		<label id="label_">ID</label>
+		<form:input path="loginId" id="id" class="input"/>
 		<span id="idChk"></span>
 		
 		
-		<label>passwd</label>
-		<form:input path="passwd" showPasswd="true"/>
+		<label id="label_">passwd</label>
+		<form:input path="passwd" showPasswd="true" class="input"/>
 		
-		<label>이름</label>
-		<form:input path="name"/>
+		<label id="label_">이름</label>
+		<form:input path="name" class="input"/>
 		
-		<label>생년월일</label>
-		<form:input path="birth"/>
+		<label id="label_">생년월일</label>
+		<form:input path="birth" class="input"/>
 		
-		<label>전화번호</label>
-		<form:input path="phoneNumber"/>
+		<label id="label_">전화번호</label>
+		<form:input path="phoneNumber" class="input"/>
 		
-		<label>이메일</label>
-		<form:input path="email"  type="email"/>
+		<label id="label_">이메일</label>
+		<form:input path="email"  type="email" class="input"/>
 		
 		<div>
-			<button type="submit" class="btn btn-primary">회원가입</button>
-			<a href="/RTC_project/index.jsp">처음으로</a>
+			<button type="submit" class="btn btn-primary" style="margin-left:240px !important;">회원가입</button>
 		</div>
 	</form:form>
 	

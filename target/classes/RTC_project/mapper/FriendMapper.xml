@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="RTC_project.mapper.FriendMapper">
+
+<update id="approve">
+	update [Friend_add]
+	set [state]=1
+	where [friend_Id]=#{id} and [user_id]=#{user}
+</update>
+<select id="friendList" resultType="RTC_project.dto.Friend">
+	select *
+	from [Friend_add]
+	where friend_id=#{id}
+</select>
+<select id="friendList_1" resultType="RTC_project.dto.Friend_add">
+	select friend_id,e.name,e.id,e.loginId
+	from [Friend_add] f join [User] e on f.user_Id=e.id
+	where f.friend_id=#{id}
+</select>
+<select id="friendList_2" resultType="RTC_project.dto.Friend">
+	select *
+	from [Friend] f join [User] u on f.[user_id]=u.loginId
+	where user_Id=#{id} or friend_id=#{id}
+</select>
+<insert id="friend_add">
+	insert friend_add(user_id,friend_id,state,receive_date,send_date)
+	values(#{user_id},#{friend_id},#{state},#{receive_date},#{send_data})
+</insert>
+</mapper>
