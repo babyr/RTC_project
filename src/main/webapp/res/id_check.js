@@ -8,10 +8,13 @@ $(document).ready(function(){
 					   comtentType:"application/x-www-form-urlencoded;charset=UTF-8",
 					   success : function(data){   
 					      var check=data;
-					      if(check=='success')
+					      if(check=='success'){
 					    	  $("#idChk").html("사용가능합니다.");
-					      else if(check=='fail')
+					    	  $("#idChk").attr("style","color:blue");
+					      }else if(check=='fail'){
 					    	  $("#idChk").html("사용불가능합니다.");
+					    	  $("#idChk").attr("style","color:red");
+					      }
 					   }
 					});
 		});

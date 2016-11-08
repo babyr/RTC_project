@@ -68,16 +68,6 @@ function logout(){
 		}
 	});
  });
-
-
-
-	
-
-
-
- 
-
-
 </script>
 <body>
 	<div id="wrapper">
@@ -102,7 +92,7 @@ function logout(){
 				
 			</div>
 			</header> <a href="User/login.do">로그인</a> <a href="User/member.do">회원가입</a> <a
-				href="Board/list.do">게시판 리스트</a> </article>
+				href="Board/list.do">게시판 리스트</a> <a href="/RTC_project/views/User/qqq.html">임시</a><a href="/asd.do">임시1</a></article>
 		</div>
 
 	</div>
@@ -123,7 +113,14 @@ function logout(){
 			</form>
 			
 			<form method="post">
-				<button type="submit" class="btn_register">회원가임</button>
+				<button type="submit" id="member" class="btn_register">회원가입</button>
+				<script>
+						$(function(){
+							$("#member").click(function(){
+								window.open('/RTC_project/User/member.do','',"width=500, height=800, left=100, top=100,scrollbars=no")
+							})
+						})
+						</script>
 			</form>
 		</sec:authorize>
 		<sec:authorize access="authenticated">
@@ -143,7 +140,7 @@ function logout(){
 						<script>
 						$(function(){
 							$("#edit").click(function(){
-								window.open('/RTC_project/User/edit.do','',"width=280, height=500, left=800, top=100")
+								window.open('/RTC_project/User/edit.do','',"width=auto, height=auto, left=auto, top=auto")
 							})
 						})
 						</script>
@@ -167,8 +164,15 @@ function logout(){
 			<button type="button" id="execute" class="btn_register" >Friend Add</button>
 			<script>
 			$('#execute').click(function(){
-				window.open('/RTC_project/friend_form.do','', "width=330, height=150, left=1000, top=400");
+				var win;
+				win = window.open('/RTC_project/friend_form.do','', "width=10, height=10, scrollbars=no, status=no,resizable=no");
+				win.opener.self;
 				
+				function resizeWindow(win){
+					var wid = win.document.body.offsetWidth+30;
+					var hei = win.document.body.offsetHeight + 40;
+					win.resizeTo(wid,hei);
+				}
 
 				
 			});
